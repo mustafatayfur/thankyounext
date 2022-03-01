@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import PostList from '../components/PostList'
 import styles from '../styles/Home.module.css'
 
 export default function Home({posts}) {
@@ -11,15 +12,7 @@ export default function Home({posts}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      
-        <div>
-          {posts.map(post =>(
-            <div key={post.id}>
-                <h1>{post.title}</h1>
-                <p>{post.body}</p>
-            </div>
-          ))}
-        </div>
+      <PostList posts={posts}/>
 
     </div>
   )
