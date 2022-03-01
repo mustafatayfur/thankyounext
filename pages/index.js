@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home({posts}) {
   return (
     <div >
       <Head>
@@ -12,10 +12,24 @@ export default function Home() {
       </Head>
 
       
-        <h1 className={styles.title}>
-          Home
-        </h1>
+        <div>
+          {posts.map(post =>(
+            <div key={post.id}>
+                <h1>{post.title}</h1>
+                <p>{post.body}</p>
+            </div>
+          ))}
+        </div>
 
     </div>
   )
+}
+export const getStaticProps = async ()=> {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=5")
+  const posts = await res.json()
+  return {
+    props:{
+      posts,
+    }
+  }
 }
