@@ -1,4 +1,3 @@
-
 import { videos } from "../../../videos"
 
 export default (req, res) => {

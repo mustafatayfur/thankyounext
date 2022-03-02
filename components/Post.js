@@ -28,7 +28,6 @@ const Post = ({post}) => {
         }
         </style>
       </>
-    
   )
 }
 
