@@ -39,7 +39,7 @@ export const getStaticProps = async (context) => {
     }
 }
 
-// SERVER-SIDE RENDERING
+///// SERVER-SIDE RENDERING ////
 
 // export const getServerSideProps = async (context)=> {
 //     const res = await fetch (`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
